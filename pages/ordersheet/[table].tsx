@@ -22,7 +22,11 @@ export default function OrderSheet() {
           <Image src='/images/back.svg' width={24} height={24} />
         </Button>
       </AppBar>
-      <Container css={styles.contents} maxWidth={false} disableGutters />
+      <Container css={styles.contents} maxWidth={false} disableGutters>
+        <Typography css={styles.title}>주문서 – Table {table}</Typography>
+        <Container css={styles.list} maxWidth={false} disableGutters />
+        <Container css={styles.info} maxWidth={false} disableGutters />
+      </Container>
     </>
   );
 }
@@ -72,5 +76,27 @@ const styles = {
     height: 994px;
     left: 0;
     top: 86px;
+  `,
+  title: css`
+    position: absolute;
+    left: 32px;
+    top: 30px;
+    font-size: 36px;
+    font-family: Roboto;
+  `,
+  list: css`
+    position: absolute;
+    width: 1260px;
+    height: 920px;
+    left: 0;
+    bottom: 0;
+  `,
+  info: css`
+    position: absolute;
+    width: 660px;
+    height: 994px;
+    right: 0;
+    top: 0;
+    background: white;
   `,
 };
