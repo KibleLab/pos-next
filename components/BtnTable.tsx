@@ -1,6 +1,7 @@
 import { Button, Container, Typography } from '@mui/material';
 import { MouseEventHandler } from 'react';
 import styles from '../styles/components/BtnTable';
+import order from '../mocks/components/BtnTable';
 
 interface IProps {
   index: number;
@@ -8,12 +9,6 @@ interface IProps {
   tableName: string;
   onClick: MouseEventHandler<HTMLButtonElement> | undefined;
 }
-
-// dummy
-const order = [
-  { order_quantity: 1, menu_name: 'AAA', menu_price: 1000 },
-  { order_quantity: 2, menu_name: 'BBB', menu_price: 2000 },
-];
 
 export default function BtnTable(props: IProps) {
   const { index, tableName, onClick } = props;
