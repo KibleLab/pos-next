@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react **/
 import { css } from '@emotion/react';
 import { AppBar, Button, Container } from '@mui/material';
 import { useRouter } from 'next/router';
@@ -17,7 +16,7 @@ const table = [
   { table_no: 8, table_name: 'Table8' },
 ];
 
-export default function index() {
+export default function Index() {
   const router = useRouter();
   return (
     <>

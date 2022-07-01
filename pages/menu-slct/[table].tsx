@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react **/
 import { css } from '@emotion/react';
 import { AppBar, Button, Container, Typography } from '@mui/material';
 import { useRouter } from 'next/router';
