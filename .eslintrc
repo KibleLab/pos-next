@@ -39,6 +39,7 @@
     "react/no-unescaped-entities": "off",
     "react/no-unused-prop-types": "off",
     "react/react-in-jsx-scope": "off",
+    "react/require-default-props": "off",
     "react/jsx-filename-extension": ["warn", { "extensions": [".ts", ".tsx"] }],
     "react/jsx-props-no-spreading": "off",
     "react/prop-types": "off",
