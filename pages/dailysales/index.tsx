@@ -1,7 +1,7 @@
-import { AppBar, Button, Container, Typography } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 import { useRouter } from 'next/router';
-import Image from 'next/image';
 import styles from '../../styles/pages/dailysales';
+import NavBar from '../../components/NavBar';
 
 export default function DailySales() {
   const router = useRouter();
@@ -11,19 +11,7 @@ export default function DailySales() {
   const day = date.getDate();
   return (
     <>
-      <AppBar css={styles.appBar} elevation={1}>
-        <Button css={styles.appBarTitle} onClick={() => router.push(`/`)}>
-          <Image src='/images/title.svg' width={319} height={58} />
-        </Button>
-        <Button
-          css={styles.appBarBtnLeft}
-          onClick={() => router.push(`/menu-mgnt`)}>
-          메뉴 관리
-        </Button>
-        <Button css={styles.appBarBtnRight} onClick={() => router.back()}>
-          <Image src='/images/back.svg' width={24} height={24} />
-        </Button>
-      </AppBar>
+      <NavBar nameArr={['메뉴 관리', 'back']} addrArr={[`/menu-mgnt`]} />
       <Container css={styles.contents} maxWidth={false} disableGutters>
         <Typography css={styles.title}>
           당일 매출 – {year}년 {month < 10 ? `${0}${month}` : month}월{' '}

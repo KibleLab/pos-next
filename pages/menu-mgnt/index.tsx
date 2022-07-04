@@ -1,10 +1,4 @@
-import {
-  AppBar,
-  Button,
-  Container,
-  TextField,
-  Typography,
-} from '@mui/material';
+import { Button, Container, TextField, Typography } from '@mui/material';
 import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
@@ -12,6 +6,7 @@ import { useState } from 'react';
 import styles from '../../styles/pages/menu-mgnt';
 import menu from '../../mocks/pages/menu-mgnt';
 import BtnMenu from '../../components/BtnMenu';
+import NavBar from '../../components/NavBar';
 
 export default function MenuMgnt() {
   const router = useRouter();
@@ -24,14 +19,7 @@ export default function MenuMgnt() {
   const { menu_name, menu_price, menu_stock } = data;
   return (
     <>
-      <AppBar css={styles.appBar} elevation={1}>
-        <Button css={styles.appBarTitle} onClick={() => router.push(`/`)}>
-          <Image src='/images/title.svg' width={319} height={58} />
-        </Button>
-        <Button css={styles.appBarBtnBack} onClick={() => router.back()}>
-          <Image src='/images/back.svg' width={24} height={24} />
-        </Button>
-      </AppBar>
+      <NavBar nameArr={['null', 'back']} />
       <Container css={styles.contents} maxWidth={false} disableGutters>
         <Typography css={styles.title}>메뉴 관리 – {menu.length}개</Typography>
         <Container css={styles.list} maxWidth={false} disableGutters>
