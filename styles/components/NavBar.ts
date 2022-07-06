@@ -38,7 +38,7 @@ const styles = {
     font-size: 20px;
     font-weight: bold;
     color: black;
-  `,
+  `
 };
 
 export default styles;

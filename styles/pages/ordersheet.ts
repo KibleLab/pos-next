@@ -29,7 +29,7 @@ const styles = {
     right: 0;
     top: 0;
     background: white;
-  `,
+  `
 };
 
 export default styles;

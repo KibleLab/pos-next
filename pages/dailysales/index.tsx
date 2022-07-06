@@ -14,8 +14,16 @@ export default function DailySales() {
       <NavBar nameArr={['메뉴 관리', 'back']} addrArr={[`/menu-mgnt`]} />
       <Container css={styles.contents} maxWidth={false} disableGutters>
         <Typography css={styles.title}>
-          당일 매출 – {year}년 {month < 10 ? `${0}${month}` : month}월{' '}
-          {day < 10 ? `${0}${day}` : day}일
+          당일 매출 –
+          {' '}
+          {year}
+          년
+          {' '}
+          {month < 10 ? `${0}${month}` : month}
+          월
+          {' '}
+          {day < 10 ? `${0}${day}` : day}
+          일
         </Typography>
         <Container css={styles.list} maxWidth={false} disableGutters />
         <Container css={styles.info} maxWidth={false} disableGutters />

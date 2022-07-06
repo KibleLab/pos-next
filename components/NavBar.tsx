@@ -21,9 +21,9 @@ export default function NavBar(props: IProps) {
           return (
             <Button
               css={styles.navBarBtnLeft}
-              onClick={() =>
-                addrArr !== undefined ? router.push(addrArr[0]) : null
-              }>
+              onClick={() => {
+                addrArr !== undefined ? router.push(addrArr[0]) : null;
+              }}>
               {nameArr[0]}
             </Button>
           );
@@ -35,9 +35,9 @@ export default function NavBar(props: IProps) {
           return (
             <Button
               css={styles.navBarBtnRight}
-              onClick={() =>
-                addrArr !== undefined ? router.push(addrArr[1]) : null
-              }>
+              onClick={() => {
+                addrArr !== undefined ? router.push(addrArr[1]) : null;
+              }}>
               {nameArr[1]}
             </Button>
           );

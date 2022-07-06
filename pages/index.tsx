@@ -11,8 +11,7 @@ export default function Index() {
     <>
       <NavBar
         nameArr={['메뉴 관리', '정 산']}
-        addrArr={[`/menu-mgnt`, `/dailysales`]}
-      />
+        addrArr={[`/menu-mgnt`, `/dailysales`]} />
       <Container css={styles.contents} maxWidth={false} disableGutters>
         <Container css={styles.btnTableList} maxWidth={false} disableGutters>
           {table.map((data, index) => (
@@ -21,8 +20,7 @@ export default function Index() {
                 index={index}
                 table={data.table_no}
                 tableName={data.table_name}
-                onClick={() => router.push(`/ordersheet/${data.table_no}`)}
-              />
+                onClick={() => router.push(`/ordersheet/${data.table_no}`)} />
             </div>
           ))}
         </Container>

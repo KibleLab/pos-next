@@ -10,10 +10,13 @@ export default function OrderSheet() {
     <>
       <NavBar
         nameArr={['메뉴 선택', 'back']}
-        addrArr={[`/menu-slct/${table}`]}
-      />
+        addrArr={[`/menu-slct/${table}`]} />
       <Container css={styles.contents} maxWidth={false} disableGutters>
-        <Typography css={styles.title}>주문서 – Table {table}</Typography>
+        <Typography css={styles.title}>
+          주문서 – Table
+          {' '}
+          {table}
+        </Typography>
         <Container css={styles.list} maxWidth={false} disableGutters />
         <Container css={styles.info} maxWidth={false} disableGutters />
       </Container>

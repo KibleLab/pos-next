@@ -146,7 +146,7 @@ const styles = {
       background: #ffffff;
       opacity: 0.8;
     }
-  `,
+  `
 };
 
 export default styles;

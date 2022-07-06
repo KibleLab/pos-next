@@ -16,7 +16,7 @@ const styles = {
     top: 32px;
     overflow-x: hidden;
     overflow-y: auto;
-  `,
+  `
 };
 
 export default styles;

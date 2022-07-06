@@ -12,22 +12,23 @@ export default function MenuSlct() {
     <>
       <NavBar nameArr={['메뉴 관리', 'back']} addrArr={[`/menu-mgnt`]} />
       <Container css={styles.contents} maxWidth={false} disableGutters>
-        <Typography css={styles.title}>메뉴 선택 – Table {table}</Typography>
+        <Typography css={styles.title}>
+          메뉴 선택 – Table
+          {' '}
+          {table}
+        </Typography>
         <Container css={styles.list} maxWidth={false} disableGutters>
           <Container css={styles.btnMenuList} maxWidth={false} disableGutters>
-            {(() => {
-              return menu.map((data, index) => (
-                <div key={index}>
-                  <BtnMenu
-                    index={index}
-                    menuName={data.menu_name}
-                    menuPrice={data.menu_price}
-                    menuStock={data.menu_stock}
-                    onClick={() => {}}
-                  />
-                </div>
-              ));
-            })()}
+            {(() => menu.map((data, index) => (
+              <div key={index}>
+                <BtnMenu
+                  index={index}
+                  menuName={data.menu_name}
+                  menuPrice={data.menu_price}
+                  menuStock={data.menu_stock}
+                  onClick={() => {}} />
+              </div>
+            )))()}
           </Container>
         </Container>
         <Container css={styles.info} maxWidth={false} disableGutters />

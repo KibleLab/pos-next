@@ -11,7 +11,9 @@ interface IProps {
 }
 
 export default function BtnMenu(props: IProps) {
-  const { index, menuName, menuStock, menuPrice, onClick } = props;
+  const {
+    index, menuName, menuStock, menuPrice, onClick
+  } = props;
   return (
     <Container
       css={styles.btnMenu(index)}
@@ -20,8 +22,15 @@ export default function BtnMenu(props: IProps) {
       component={Button}
       disableGutters>
       <Typography css={styles.menuName}>{menuName}</Typography>
-      <Typography css={styles.menuStock}>재고: {menuStock}</Typography>
-      <Typography css={styles.menuPrice}>{menuPrice}원</Typography>
+      <Typography css={styles.menuStock}>
+        재고:
+        {' '}
+        {menuStock}
+      </Typography>
+      <Typography css={styles.menuPrice}>
+        {menuPrice}
+        원
+      </Typography>
     </Container>
   );
 }

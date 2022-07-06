@@ -3,8 +3,8 @@
 const nextConfig = {
   reactStrictMode: true,
   compiler: {
-    emotion: true,
-  },
+    emotion: true
+  }
 };
 
 export default nextConfig;

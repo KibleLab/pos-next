@@ -21,20 +21,19 @@ export default function BtnTable(props: IProps) {
       disableGutters>
       <Typography css={styles.tableName}>{tableName}</Typography>
       <Container css={styles.orderList} maxWidth={false} disableGutters>
-        {(() => {
-          return order.map((data, index) => (
-            <Container
-              key={index}
-              css={styles.order(index)}
-              maxWidth={false}
-              disableGutters>
-              <Typography css={styles.orderName}>{data.menu_name}</Typography>
-              <Typography css={styles.orderQuantity}>
-                ⨉{data.order_quantity}
-              </Typography>
-            </Container>
-          ));
-        })()}
+        {(() => order.map((data, index) => (
+          <Container
+            key={index}
+            css={styles.order(index)}
+            maxWidth={false}
+            disableGutters>
+            <Typography css={styles.orderName}>{data.menu_name}</Typography>
+            <Typography css={styles.orderQuantity}>
+              ⨉
+              {data.order_quantity}
+            </Typography>
+          </Container>
+        )))()}
       </Container>
     </Container>
   );
