@@ -10,8 +10,8 @@ export default function Index() {
   return (
     <>
       <NavBar
-        nameArr={['메뉴 관리', '정 산']}
-        addrArr={[`/menu-mgnt`, `/dailysales`]} />
+        btnName={{ first: '메뉴 관리', second: '정 산' }}
+        btnAddr={{ first: `/menu-mgnt`, second: `/dailysales` }} />
       <Container css={styles.contents} maxWidth={false} disableGutters>
         <Container css={styles.btnTableList} maxWidth={false} disableGutters>
           {table.map((data, index) => (

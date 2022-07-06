@@ -10,7 +10,9 @@ export default function MenuSlct() {
   const { table } = router.query;
   return (
     <>
-      <NavBar nameArr={['메뉴 관리', 'back']} addrArr={[`/menu-mgnt`]} />
+      <NavBar
+        btnName={{ first: '메뉴 관리', second: 'back' }}
+        btnAddr={{ first: `/menu-mgnt` }} />
       <Container css={styles.contents} maxWidth={false} disableGutters>
         <Typography css={styles.title}>
           메뉴 선택 – Table

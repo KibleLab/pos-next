@@ -1,8 +1,8 @@
 import {
   Button, Container, TextField, Typography
 } from '@mui/material';
-import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
-import { useRouter } from 'next/router';
+import DeleteForeverOutlinedIcon
+  from '@mui/icons-material/DeleteForeverOutlined';
 import Image from 'next/image';
 import { useState } from 'react';
 import styles from '../../styles/pages/menu-mgnt';
@@ -11,7 +11,6 @@ import BtnMenu from '../../components/BtnMenu';
 import NavBar from '../../components/NavBar';
 
 export default function MenuMgnt() {
-  const router = useRouter();
   const [data, setData] = useState({
     menu_name: '',
     menu_price: 0,
@@ -21,7 +20,7 @@ export default function MenuMgnt() {
   const { menu_name, menu_price, menu_stock } = data;
   return (
     <>
-      <NavBar nameArr={['null', 'back']} />
+      <NavBar btnName={{ first: 'null', second: 'back' }} />
       <Container css={styles.contents} maxWidth={false} disableGutters>
         <Typography css={styles.title}>
           메뉴 관리 –

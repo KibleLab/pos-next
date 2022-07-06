@@ -4,46 +4,48 @@ import Image from 'next/image';
 import styles from '../styles/components/NavBar';
 
 interface IProps {
-  nameArr: string[];
-  addrArr?: string[];
+  btnName: { first: string; second: string };
+  btnAddr?: { first?: string; second?: string };
 }
 
 export default function NavBar(props: IProps) {
   const router = useRouter();
-  const { nameArr, addrArr } = props;
+  const { btnName, btnAddr } = props;
   return (
     <AppBar css={styles.navBarRoot} elevation={1}>
       <Button css={styles.navBarTitle} onClick={() => router.push(`/`)}>
         <Image src='/images/title.svg' width={319} height={58} />
       </Button>
       {(() => {
-        if (nameArr[0] !== 'null') {
+        if (btnName.first !== 'null') {
           return (
             <Button
-              css={styles.navBarBtnLeft}
+              css={styles.navBarBtnFirst}
               onClick={() => {
-                addrArr !== undefined ? router.push(addrArr[0]) : null;
+                typeof btnAddr?.first !== 'undefined'
+                  && router.push(btnAddr?.first);
               }}>
-              {nameArr[0]}
+              {btnName.first}
             </Button>
           );
         }
         return null;
       })()}
       {(() => {
-        if (nameArr[1] !== 'back') {
+        if (btnName.second !== 'back') {
           return (
             <Button
-              css={styles.navBarBtnRight}
+              css={styles.navBarBtnSecond}
               onClick={() => {
-                addrArr !== undefined ? router.push(addrArr[1]) : null;
+                typeof btnAddr?.second !== 'undefined'
+                  && router.push(btnAddr?.second);
               }}>
-              {nameArr[1]}
+              {btnName.second}
             </Button>
           );
         }
         return (
-          <Button css={styles.navBarBtnRight} onClick={() => router.back()}>
+          <Button css={styles.navBarBtnSecond} onClick={() => router.back()}>
             <Image src='/images/back.svg' width={24} height={24} />
           </Button>
         );

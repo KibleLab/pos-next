@@ -17,7 +17,7 @@ const styles = {
     left: 40px;
     padding: 0;
   `,
-  navBarBtnLeft: css`
+  navBarBtnFirst: css`
     position: absolute;
     width: 115px;
     height: 85px;
@@ -28,7 +28,7 @@ const styles = {
     font-weight: bold;
     color: black;
   `,
-  navBarBtnRight: css`
+  navBarBtnSecond: css`
     position: absolute;
     width: 115px;
     height: 85px;

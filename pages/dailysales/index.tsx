@@ -1,17 +1,17 @@
 import { Container, Typography } from '@mui/material';
-import { useRouter } from 'next/router';
 import styles from '../../styles/pages/dailysales';
 import NavBar from '../../components/NavBar';
 
 export default function DailySales() {
-  const router = useRouter();
   const date = new Date();
   const year = date.getFullYear();
   const month = date.getMonth() + 1;
   const day = date.getDate();
   return (
     <>
-      <NavBar nameArr={['메뉴 관리', 'back']} addrArr={[`/menu-mgnt`]} />
+      <NavBar
+        btnName={{ first: '메뉴 관리', second: 'back' }}
+        btnAddr={{ first: `/menu-mgnt` }} />
       <Container css={styles.contents} maxWidth={false} disableGutters>
         <Typography css={styles.title}>
           당일 매출 –

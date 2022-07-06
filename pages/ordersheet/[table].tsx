@@ -9,8 +9,8 @@ export default function OrderSheet() {
   return (
     <>
       <NavBar
-        nameArr={['메뉴 선택', 'back']}
-        addrArr={[`/menu-slct/${table}`]} />
+        btnName={{ first: '메뉴 선택', second: 'back' }}
+        btnAddr={{ first: `/menu-slct/${table}` }} />
       <Container css={styles.contents} maxWidth={false} disableGutters>
         <Typography css={styles.title}>
           주문서 – Table
