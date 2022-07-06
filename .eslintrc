@@ -6,8 +6,7 @@
   "extends": [
     "airbnb",
     "plugin:react/recommended",
-    "plugin:import/recommended",
-    "plugin:prettier/recommended"
+    "plugin:import/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -17,34 +16,45 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": [
-    "react",
-    "react-hooks",
-    "@typescript-eslint",
-    "prettier",
-    "import"
-  ],
+  "plugins": ["react", "react-hooks", "@typescript-eslint", "import"],
   "rules": {
-    "arrow-body-style": "off",
+    "array-bracket-spacing": ["warn", "never"],
+    "arrow-body-style": ["warn", "as-needed"],
     "camelcase": "off",
-    "comma-dangle": "off",
+    "comma-dangle": ["warn", "never"],
+    "curly": ["warn", "multi-or-nest"],
+    "indent": ["error", 2],
     "import/extensions": ["error", { "ts": "never", "tsx": "never" }],
     "import/no-unresolved": "off",
+    "jsx-quotes": ["warn", "prefer-single"],
+    "max-len": ["warn", { "code": 80 }],
+    "no-lonely-if": "warn",
     "no-shadow": "off",
     "no-unused-vars": "off",
     "no-use-before-define": "off",
-    "operator-linebreak": ["error", "before"],
-    "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+    "no-unused-expressions": "off",
+    "object-curly-spacing": ["error", "always"],
+    "operator-linebreak": ["warn", "before"],
+    "quotes": ["warn", "single", { "allowTemplateLiterals": true }],
     "react/no-array-index-key": "off",
     "react/no-unescaped-entities": "off",
     "react/no-unused-prop-types": "off",
     "react/react-in-jsx-scope": "off",
-    "react/jsx-filename-extension": ["warn", { "extensions": [".ts", ".tsx"] }],
+    "react/require-default-props": "off",
+    "react/jsx-closing-bracket-location": [
+      "warn",
+      { "selfClosing": "after-props", "nonEmpty": "after-props" }
+    ],
+    "react/jsx-filename-extension": [
+      "error",
+      { "extensions": [".ts", ".tsx"] }
+    ],
     "react/jsx-props-no-spreading": "off",
     "react/prop-types": "off",
+    "semi": ["warn", "always"],
     "spaced-comment": "off",
     "@typescript-eslint/quotes": [
-      "error",
+      "warn",
       "single",
       { "allowTemplateLiterals": true }
     ],

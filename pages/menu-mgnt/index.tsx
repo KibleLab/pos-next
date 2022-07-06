@@ -1,57 +1,48 @@
 import {
-  AppBar,
-  Button,
-  Container,
-  TextField,
-  Typography,
+  Button, Container, TextField, Typography
 } from '@mui/material';
-import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
-import { useRouter } from 'next/router';
+import DeleteForeverOutlinedIcon
+  from '@mui/icons-material/DeleteForeverOutlined';
 import Image from 'next/image';
 import { useState } from 'react';
 import styles from '../../styles/pages/menu-mgnt';
 import menu from '../../mocks/pages/menu-mgnt';
 import BtnMenu from '../../components/BtnMenu';
+import NavBar from '../../components/NavBar';
 
 export default function MenuMgnt() {
-  const router = useRouter();
   const [data, setData] = useState({
     menu_name: '',
     menu_price: 0,
-    menu_stock: 0,
+    menu_stock: 0
   });
   const [infoMode, setInfoMode] = useState(0);
   const { menu_name, menu_price, menu_stock } = data;
   return (
     <>
-      <AppBar css={styles.appBar} elevation={1}>
-        <Button css={styles.appBarTitle} onClick={() => router.push(`/`)}>
-          <Image src='/images/title.svg' width={319} height={58} />
-        </Button>
-        <Button css={styles.appBarBtnBack} onClick={() => router.back()}>
-          <Image src='/images/back.svg' width={24} height={24} />
-        </Button>
-      </AppBar>
+      <NavBar btnName={{ first: 'null', second: 'back' }} />
       <Container css={styles.contents} maxWidth={false} disableGutters>
-        <Typography css={styles.title}>메뉴 관리 – {menu.length}개</Typography>
+        <Typography css={styles.title}>
+          메뉴 관리 –
+          {' '}
+          {menu.length}
+          개
+        </Typography>
         <Container css={styles.list} maxWidth={false} disableGutters>
           <Container css={styles.btnMenuList} maxWidth={false} disableGutters>
-            {(() => {
-              return menu.map((data, index) => (
-                <div key={index}>
-                  <BtnMenu
-                    index={index}
-                    menuName={data.menu_name}
-                    menuPrice={data.menu_price}
-                    menuStock={data.menu_stock}
-                    onClick={() => {
-                      setData(data);
-                      setInfoMode(2);
-                    }}
-                  />
-                </div>
-              ));
-            })()}
+            {(() => menu.map((data, index) => (
+              <div key={index}>
+                <BtnMenu
+                  index={index}
+                  menuName={data.menu_name}
+                  menuPrice={data.menu_price}
+                  menuStock={data.menu_stock}
+                  onClick={() => {
+                    setData(data);
+                    setInfoMode(2);
+                  }} />
+              </div>
+            )))()}
           </Container>
         </Container>
         <Container css={styles.info} maxWidth={false} disableGutters>
@@ -77,16 +68,14 @@ export default function MenuMgnt() {
                     onChange={(e) => {
                       setData({ ...data, menu_name: e.target.value });
                     }}
-                    variant='outlined'
-                  />
+                    variant='outlined' />
                   <TextField
                     css={styles.addMenuPrice}
                     label='단가 입력'
                     onChange={(e) => {
                       setData({ ...data, menu_price: Number(e.target.value) });
                     }}
-                    variant='outlined'
-                  />
+                    variant='outlined' />
                   <TextField
                     css={styles.addMenuStock}
                     label='재고 입력'
@@ -95,8 +84,7 @@ export default function MenuMgnt() {
                     onChange={(e) => {
                       setData({ ...data, menu_stock: Number(e.target.value) });
                     }}
-                    variant='outlined'
-                  />
+                    variant='outlined' />
                   <Container
                     css={styles.infoFooter}
                     maxWidth={false}
@@ -136,8 +124,7 @@ export default function MenuMgnt() {
                     onChange={(e) => {
                       setData({ ...data, menu_name: e.target.value });
                     }}
-                    variant='outlined'
-                  />
+                    variant='outlined' />
                   <TextField
                     css={styles.editMenuPrice}
                     label='단가 수정'
@@ -146,8 +133,7 @@ export default function MenuMgnt() {
                     onChange={(e) => {
                       setData({ ...data, menu_price: Number(e.target.value) });
                     }}
-                    variant='outlined'
-                  />
+                    variant='outlined' />
                   <TextField
                     css={styles.editMenuStock}
                     label='재고 수정'
@@ -158,8 +144,7 @@ export default function MenuMgnt() {
                     onChange={(e) => {
                       setData({ ...data, menu_stock: Number(e.target.value) });
                     }}
-                    variant='outlined'
-                  />
+                    variant='outlined' />
                   <Container
                     css={styles.infoFooter}
                     maxWidth={false}

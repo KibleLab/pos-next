@@ -55,7 +55,7 @@ const styles = {
     font-family: Roboto;
     font-size: 24px;
     color: red;
-  `,
+  `
 };
 
 export default styles;
