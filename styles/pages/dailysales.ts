@@ -22,6 +22,18 @@ const styles = {
     left: 0;
     bottom: 0;
   `,
+  dataSheet: css`
+    position: absolute;
+    width: 1196px;
+    height: 875px;
+    left:32px;
+    top: 13px;
+    background: white;
+    &.ag-theme-alpine {
+      font-size: 20px;
+    }
+  `,
+
   info: css`
     position: absolute;
     width: 660px;
